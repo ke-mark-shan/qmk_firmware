@@ -1309,6 +1309,13 @@ bool process_record_backlight(uint16_t keycode, keyrecord_t *record)
 			}
 			return false;
 			break;
+    case EF_OFF:
+      if (record->event.pressed)
+      {
+        backlight_effect_off();
+      }
+      return false;
+      break;
 		case ES_INC:
 			if (record->event.pressed)
 			{
