@@ -1312,7 +1312,8 @@ bool process_record_backlight(uint16_t keycode, keyrecord_t *record)
     case EF_OFF:
       if (record->event.pressed)
       {
-        backlight_effect_off();
+        g_config.effect = 0;
+		backlight_config_save();
       }
       return false;
       break;
